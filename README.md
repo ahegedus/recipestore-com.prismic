@@ -30,7 +30,7 @@ To run this project in your local development environment:
 
 ### Testing
 
-To run the test in this project in your local development environment
+To run the test in this project in your local development environment:
 
 1. Install dependencies:
     ```sh

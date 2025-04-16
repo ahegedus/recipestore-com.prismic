@@ -41,7 +41,7 @@ Key files to edit:
 ### Deploy the Project
 
 - Automatic CI/CD pipeline on Vercel.
-- Demo deployment is hosted at: [https://recipestore-com.vercel.app](https://recipestore-com-com.vercel.app)
+- Demo deployment is hosted at: [https://recipestore-com.vercel.app](https://recipestore-com.vercel.app)
 
 ## References
 

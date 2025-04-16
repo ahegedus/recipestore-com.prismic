@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Content, FilledContentRelationshipField } from "@prismicio/client";
-import { PrismicImage, PrismicLink, SliceComponentProps } from "@prismicio/react";
+import { PrismicImage, SliceComponentProps } from "@prismicio/react";
 import { RecipeTileSliceDefaultPrimaryRecipesItem } from "../../../prismicio-types";
 
 import { entities } from "../../store";

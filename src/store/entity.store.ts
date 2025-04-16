@@ -28,33 +28,35 @@ const load = async () => {
   };
 }
 
-const getCategoryMap = async () => {
-  const client = createClient();
-  const recipeMap = new Map<string, unknown>();
-  await client.getAllByType("recipe", {
-    graphQuery: `{
-          recipe {
-            title
-            category {
-              name
-              description
-              cover_image
-            }
-            image
-            author {
-              name
-              bio
-              profile_image
-            }
-          }
-        }`
-  }).then((response) => response.reduce((acc, recipe: any) => {
-    acc.set(recipe.id, recipe);
-    return acc;
-  }, recipeMap));
-  return recipeMap;
-};
+// const getCategoryMap = async () => {
+//   const client = createClient();
+//   const recipeMap = new Map<string, unknown>();
+//   await client.getAllByType("recipe", {
+//     graphQuery: `{
+//           recipe {
+//             title
+//             category {
+//               name
+//               description
+//               cover_image
+//             }
+//             image
+//             author {
+//               name
+//               bio
+//               profile_image
+//             }
+//           }
+//         }`
+//   }).then((response) => response.reduce((acc, recipe: any) => {
+//     acc.set(recipe.id, recipe);
+//     return acc;
+//   }, recipeMap));
+//   return recipeMap;
+// };
 
-export default {
+const store = {
   getStore: load,
 };
+
+export default store;

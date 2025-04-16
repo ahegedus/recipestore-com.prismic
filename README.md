@@ -2,64 +2,34 @@
 
 Deployed URL: <https://recipestore-com.vercel.app>
 
-&nbsp;
-
 ## 🚀 Quick Start
 
-To get started with the **recipestore-com-prismic** project:
-
-1. Visit <https://prismic.io/dashboard>.
-2. Create a new Prismic repository by selecting **Next.js**.
-3. Choose the **Minimal starter** template.
-4. Fill out your repository details and follow the setup instructions provided by Prismic.
-
-Once your repository is ready, run the following command to start the local development server on port `3001`:
-
-```sh
-npm run dev
-```
-
-Make sure your `package.json` or development config points to `localhost:3001`.
+Here you find the description of the pa
 
 ## How to Use This Project
 
-To manage your content:
+To manage the headless CMS content content:
 
 1. Go to [prismic.io/dashboard](https://prismic.io/dashboard).
 2. Open the repository associated with **recipestore-com** at [Prismic Main Space Builder}(https://recipestore-com.prismic.io/builder/working)
 3. Start editing or creating content using the Prismic UI.
 
-### Create a Page
+### Preview Page
 
-To create a new page:
+If you want to run this project on your local development environment, just execute the following commands
+```sh
+npm install
+npm run dev
+```
 
-1. Click the green pencil icon in the Prismic dashboard.
-2. Choose **Page**.
-3. Add and rearrange Slices to build your page visually.
+Then the local preview page is already set up for `http://localhost:3000`
 
-Each page will have a unique URL, but it won’t show in the navigation by default. Add it to the menu manually if needed.
-
-### Preview Content
-
-Local previewing is already set up for `http://localhost:3001`.  
-To enable previews in production or staging, refer to [Preview Drafts in Next.js](https://prismic.io/docs/technologies/preview-content-nextjs).
-
-### Customize the Website
-
-This project integrates with Prismic using the following packages:
-
-- `@prismicio/client` — fetches content from Prismic.
-- `@prismicio/react` — renders Prismic content in React components.
-- `@prismicio/next` — configures Prismic for use in Next.js apps.
-
-These are preconfigured. Check the source code to understand how they are used.
-
-### Edit the Code
+### Architectural notes
 
 Key files to edit:
 
 - `prismicio.ts`: Configures `@prismicio/client` and API utilities.
-- `app/layout.tsx`: Global layout setup, including Prismic providers.
+- `app/layout.tsx`: Global layout setup, including Prismic providers, basic navigation bar
 - `app/page.tsx`: The homepage component; fetches and renders the "home" document.
 - `app/[uid]/page.tsx`: Dynamically renders pages based on Prismic UID.
 - `slices/*/index.tsx`: Individual Slice components. Modify these to change Slice styling and structure.

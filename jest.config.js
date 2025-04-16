@@ -1,14 +1,9 @@
 module.exports = {
     preset: 'ts-jest',
     testEnvironment: 'jest-environment-jsdom',
-    globals: {
-        'ts-jest': {
-            tsconfig: '<rootDir>/tsconfig.jest.json',
-        },
-    },
     setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
     transform: {
-        '^.+\\.(ts|tsx|js|jsx)$': 'babel-jest', // Use babel-jest for all JS/TS files
+        '^.+\\.(ts|tsx|js|jsx)$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.jest.json' }], // Move ts-jest config here
     },
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
     testPathIgnorePatterns: ['/node_modules/', '/.next/'],

@@ -18,15 +18,15 @@ export default function RootLayout({
               <p className="text-gray-600">A collection of delicious recipes</p>
               <menu className="mt-4 flex space-x-8">
                 <section>
-                  <h2 className="text-xl font-semibold text-gray-500">Categories</h2>
+                  <Link href="/catalog"><h2 className="text-xl font-semibold text-gray-700">Catalog</h2></Link>
                   <ul className="flex space-x-4">
-                    <li><Link href="/category/main-course" className="text-blue-500 hover:underline">Main Courses</Link></li>
+                    <li><Link href="/category/main-course" className="text-gray-700 hover:underline">» Main Courses</Link></li>
                   </ul>
                 </section>
                 <section>
                   <h2 className="text-xl font-semibold text-gray-500">Favorites</h2>
                   <ul className="flex space-x-4">
-                    <li><Link href="/recipe/spagetti-carbonara" className="text-blue-500 hover:underline">Spaghetti Carbonara</Link></li>
+                    <li><Link href="/recipe/spagetti-carbonara" className="text-gray-700 hover:underline">» Spaghetti Carbonara</Link></li>
                   </ul>
                 </section>
               </menu>

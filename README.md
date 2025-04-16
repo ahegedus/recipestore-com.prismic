@@ -1,53 +1,55 @@
-# recipestore-com-prismic Integration
+# RecipeStore Prismic Integration
 
-Deployed URL: <https://recipestore-com.vercel.app>
+Deployed URL: [https://recipestore-com.vercel.app](https://recipestore-com.vercel.app)
 
 ## 🚀 Quick Start
 
-Here you find the description of the pa
+This guide provides an overview of the RecipeStore integration with Prismic, a headless CMS.
 
 ## How to Use This Project
 
-To manage the headless CMS content content:
+To manage the content in the headless CMS:
 
-1. Go to [prismic.io/dashboard](https://prismic.io/dashboard).
-2. Open the repository associated with **recipestore-com** at [Prismic Main Space Builder}(https://recipestore-com.prismic.io/builder/working)
-3. Start editing or creating content using the Prismic UI.
+1. Visit the [Prismic Dashboard](https://prismic.io/dashboard).
+2. Open the repository associated with **RecipeStore** at [Prismic Main Space Builder](https://recipestore-com.prismic.io/builder/working).
+3. Use the Prismic UI to edit or create content.
 
-### Preview Page
+### Previewing Locally
 
-If you want to run this project on your local development environment, just execute the following commands
-```sh
-npm install
-npm run dev
-```
+To run this project in your local development environment:
 
-Then the local preview page is already set up for `http://localhost:3000`
+1. Install dependencies:
+    ```sh
+    npm install
+    ```
+2. Start the development server:
+    ```sh
+    npm run dev
+    ```
+3. Access the local preview at [http://localhost:3000](http://localhost:3000).
 
-### Architectural notes
+## Architectural Notes
 
-Key files to edit:
+Key files and their purposes:
 
-- `prismicio.ts`: Configures `@prismicio/client` and API utilities.
-- `app/layout.tsx`: Global layout setup, including Prismic providers, basic navigation bar
-- `app/page.tsx`: The homepage component; fetches and renders the "home" document.
-- `app/catalog/page.tsx`: Static render for all Recipes
-- `app/recipe/[uid]/page.tsx`: Dynamically renders Recipe page based on Prismic UID.
-- `app/category/[uid]/page.tsx`: Dynamically renders all Recipes with a static prefilter for category based on Prismic UID.
-- `slices/*/index.tsx`: Individual Slice components.
-- `slices/*/index.tsx`: Individual Slice components.
-- `store/index.ts`: Prismic content stores to easy access and helpers.
+- **`prismicio.ts`**: Configures `@prismicio/client` and API utilities.
+- **`app/layout.tsx`**: Sets up the global layout, including Prismic providers and the navigation bar.
+- **`app/page.tsx`**: Fetches and renders the homepage content from the "home" document.
+- **`app/catalog/page.tsx`**: Renders a static page listing all recipes.
+- **`app/recipe/[uid]/page.tsx`**: Dynamically renders individual recipe pages based on their Prismic UID.
+- **`app/category/[uid]/page.tsx`**: Dynamically renders recipes filtered by category using the Prismic UID.
+- **`slices/*/index.tsx`**: Contains individual Slice components for modular content.
+- **`store/index.ts`**: Provides Prismic content stores and helper utilities for easier access.
 
-### Deploy the Project
+## Deployment
 
-- Automatic CI/CD pipeline on Vercel.
-- Demo deployment is hosted at: [https://recipestore-com.vercel.app](https://recipestore-com.vercel.app)
+- The project is deployed using an automatic CI/CD pipeline on Vercel.
+- The live demo is available at: [https://recipestore-com.vercel.app](https://recipestore-com.vercel.app).
 
 ## References
 
-GenAI prompts are store in `prompts` folder.
+- **Prompts**: GenAI prompts are stored in the `prompts` folder.
+- **Documentation**:
+  - [Prismic’s Guide for Next.js](https://prismic.io/docs/technologies/nextjs)
+  - [Technical References for Prismic Packages](https://prismic.io/docs/technologies/technical-references)
 
-For more details, refer to:
-
-- [Prismic’s guide for Next.js][prismic-docs]
-- [Technical references for Prismic packages](https://prismic.io/docs/technologies/technical-references)

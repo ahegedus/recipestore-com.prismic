@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Content, FilledContentRelationshipField } from "@prismicio/client";
 import { PrismicImage, PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { entities } from "@/store";
+import styles from "./index.module.css";
 
 /**
  * Props for `RecipeView`.
@@ -39,13 +40,17 @@ const RecipeView: FC<RecipeViewProps> = async ({ slice }) => {
           <header>
             <h1 className="text-2xl font-bold">{recipe.data.title}</h1>
             <div className="text-gray-700">
-              <PrismicRichText field={recipe.data.ingridients} />
+              <div className={styles.richtext}>
+                <PrismicRichText field={recipe.data.ingridients} />
+              </div>
             </div>
           </header>
           <div className="my-4">
             <h2 className="text-2xl font-semibold">Steps</h2>
             <div className="text-lg">
-              <PrismicRichText field={recipe.data.steps} />
+              <div className={styles.richtext}>
+                <PrismicRichText field={recipe.data.steps} />
+              </div>
             </div>
           </div>
         </article>
@@ -55,7 +60,9 @@ const RecipeView: FC<RecipeViewProps> = async ({ slice }) => {
           <div className="mt-2">
             <p className="text-lg font-medium">{category.data.name}</p>
             <div className="text-gray-700">
-              <PrismicRichText field={category.data.description} />
+              <div className={styles.richtext}>
+                <PrismicRichText field={category.data.description} />
+              </div>
             </div>
           </div>
         </section>
@@ -70,7 +77,9 @@ const RecipeView: FC<RecipeViewProps> = async ({ slice }) => {
             <div>
               <p className="text-lg font-medium">{author.data.name}</p>
               <div className="text-gray-700">
-                <PrismicRichText field={author.data.bio} />
+                <div className={styles.richtext}>
+                  <PrismicRichText field={author.data.bio} />
+                </div>
               </div>
             </div>
           </div>

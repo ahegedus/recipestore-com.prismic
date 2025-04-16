@@ -36,7 +36,7 @@ export default function RootLayout({
             </main>
           </div>
         </div>
-        <footer className="bg-gray-800 text-white py-4 mt-auto absolute bottom-0 w-full">
+        <footer className="bg-gray-800 text-white py-4 mt-auto relative bottom-0 w-full">
           <div className="container mx-auto text-center">
             <p>&copy; 2025 AIHegedus Recipes. All rights reserved.</p>
           </div>

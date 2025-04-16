@@ -28,6 +28,19 @@ To run this project in your local development environment:
     ```
 3. Access the local preview at [http://localhost:3000](http://localhost:3000).
 
+### Testing
+
+To run the test in this project in your local development environment
+
+1. Install dependencies:
+    ```sh
+    npm install
+    ```
+2. Start the development server:
+    ```sh
+    npm test
+    ```
+
 ## Architectural Notes
 
 Key files and their purposes:

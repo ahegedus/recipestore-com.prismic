@@ -1,6 +1,96 @@
 .richtext {
-  max-width: 600px;
-  margin: 6em auto;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.richtext h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.richtext h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.richtext h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.richtext p {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.richtext ul {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.richtext ol {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.richtext li {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.richtext blockquote {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.richtext a {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.richtext strong {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.richtext em {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.richtext code {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.richtext pre {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.richtext img {
+  max-width: 100%;
+  height: auto;
+}
+
+.richtext table {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.richtext th {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.richtext td {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.richtext hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 1rem 0;
 }

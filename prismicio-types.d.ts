@@ -173,7 +173,7 @@ export type CategoryDocument<Lang extends string = string> =
     Lang
   >;
 
-type CategorypageDocumentDataSlicesSlice = RecipeTileSlice;
+type CategorypageDocumentDataSlicesSlice = RichTextSlice | RecipeTileSlice;
 
 /**
  * Content for CategoryPage documents

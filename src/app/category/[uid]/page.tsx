@@ -6,6 +6,8 @@ import { SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 
+export const revalidate = 300;
+
 type Params = { uid: string };
 
 export default async function Page({ params }: { params: Promise<Params> }) {

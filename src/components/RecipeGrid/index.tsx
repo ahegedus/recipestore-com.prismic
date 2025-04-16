@@ -103,7 +103,7 @@ const RecipeGrid: FC<RecipeGridProps> = ({ recipes, store }) => {
 
                     return (
                         <PrismicNextLink field={recipe?.data.receipe_page} key={i + recipe?.id} className="border p-4 rounded">
-                            <PrismicImage field={recipe?.data.image} className="w-full h-auto mb-2" />
+                            <PrismicImage field={recipe?.data.image} className="w-full h-auto mb-2" style={{ maxHeight: '290px', objectFit: 'cover' }} />
                             <h2 className="text-xl font-bold">{recipe?.data.title}</h2>
                             <p>{category?.data.name}</p>
                             <p>{author?.data.name}</p>

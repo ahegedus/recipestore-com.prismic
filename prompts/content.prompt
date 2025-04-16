@@ -1,0 +1,152 @@
+### Prompt for GPT-4 to Generate Content for Prismic Website
+
+You are a content creator tasked with generating engaging and structured content for a Prismic website. The content will be used for the migration release endpoint to import Recipe types. Focus on creating recipes for three categories: **Desserts**, **Main Dishes**, **Vegetarian**, and **Street Food**. Follow these guidelines step by step, and only display the requested output:
+
+1. **Recipe Structure**:
+    - Title: A catchy and descriptive name for the recipe.
+    - Description: A short, engaging summary of the recipe.
+    - Ingredients: A list of ingredients with quantities.
+    - Instructions: Step-by-step cooking instructions.
+    - Prep Time: Estimated preparation time.
+    - Cook Time: Estimated cooking time.
+    - Servings: Number of servings the recipe makes.
+
+2. **Tone and Style**:
+    - Use a friendly and approachable tone.
+    - Make the content easy to read and follow.
+    - Highlight unique or cultural aspects of the recipe when applicable.
+
+3. **Category-Specific Notes**:
+    - **Desserts** (id=Z_7eDREAACMABPj4): Include a mix of classic and creative options (e.g., cakes, cookies, puddings).
+    - **Main Courses** (id=Z_7fqBEAACEABPtx): Focus on hearty and flavorful meals (e.g., pasta, stews, grilled dishes).
+    - **Street Food** (id=Z_7eWxEAACAABPl7): Highlight popular street food recipes from around the world (e.g., tacos, samosas, kebabs).
+    - **Vegetarian** (id=Z_7ddxEAACEABPgL): Provide plant-based recipes that are both nutritious and delicious (e.g., salads, veggie burgers, stir-fries).
+
+4. **Output Format**:
+    - Provide the content in JSON format for easy import into Prismic.
+    - Keep the following format as a template, now new properties are allowed to be created:
+      ```json
+      {
+          "uid": "grilled-lemon-herb-chicken",
+          "title": "Grilled Lemon Herb Chicken",
+          "type": "recipe",
+          "tags": [],
+          "lang": "en-us",
+          "data": {
+              "title": "Grilled Lemon Herb Chicken",
+              "ingridients": [
+                  {
+                      "type": "o-list-item",
+                      "text": "4 boneless chicken breasts",
+                      "spans": [],
+                      "direction": "ltr"
+                  },
+                  {
+                      "type": "o-list-item",
+                      "text": "2 tbsp olive oil",
+                      "spans": [],
+                      "direction": "ltr"
+                  },
+                  {
+                      "type": "o-list-item",
+                      "text": "Juice of 1 lemon",
+                      "spans": [],
+                      "direction": "ltr"
+                  },
+                  {
+                      "type": "o-list-item",
+                      "text": "2 cloves garlic, minced",
+                      "spans": [],
+                      "direction": "ltr"
+                  },
+                  {
+                      "type": "o-list-item",
+                      "text": "1 tsp dried oregano",
+                      "spans": [],
+                      "direction": "ltr"
+                  },
+                  {
+                      "type": "o-list-item",
+                      "text": "1 tsp dried thyme",
+                      "spans": [],
+                      "direction": "ltr"
+                  },
+                  {
+                      "type": "o-list-item",
+                      "text": "Salt and pepper to taste",
+                      "spans": [],
+                      "direction": "ltr"
+                  }
+              ],
+              "steps": [
+                  {
+                      "type": "list-item",
+                      "text": "In a bowl, whisk together olive oil, lemon juice, garlic, oregano, thyme, salt, and pepper.",
+                      "spans": [],
+                      "direction": "ltr"
+                  },
+                  {
+                      "type": "list-item",
+                      "text": "Marinate chicken in the mixture for at least 30 minutes (or overnight for best flavor).",
+                      "spans": [],
+                      "direction": "ltr"
+                  },
+                  {
+                      "type": "list-item",
+                      "text": "Preheat grill to medium-high heat.",
+                      "spans": [],
+                      "direction": "ltr"
+                  },
+                  {
+                      "type": "list-item",
+                      "text": "Grill chicken for 6-8 minutes per side, or until fully cooked and slightly charred.",
+                      "spans": [],
+                      "direction": "ltr"
+                  },
+                  {
+                      "type": "list-item",
+                      "text": "Let rest for a few minutes before serving.",
+                      "spans": [],
+                      "direction": "ltr"
+                  }
+              ],
+              "category": {
+                  "id": "Z_7fqBEAACEABPtx",
+                  "type": "category",
+                  "link_type": "Document"
+              },
+              "cook_time": "35 minutes",
+              "image": {
+                  "id": "Z_9V2-vxEdbNPG0j"
+              },
+              "author": {
+                  "id": "Z_7dGxEAACAABPd9",
+                  "type": "author",
+                  "link_type": "Document"
+              }
+          }
+      }
+      ```
+
+Generate 3 recipes for each category in a single bash file which contains cURL format to allow me to import via API.
+
+[Migration API technical reference](https://prismic.io/docs/migration-api-technical-reference)
+
+API description: 
+- Method: POST
+- Purpose: Create a document.
+- URL: https://migration.prismic.io/documents
+- Headers
+-- `Authorization`: A Bearer permanent token or user session token from the Authentication API. Use placeholder XXXXXXXXX to allow me to fill later.
+-- `repository`: `recipestore-com`
+-- `x-api-key`: A key required for accessing the Migration API Beta.
+
+Available demo keys are:
+
+cSaZlfkQlF9C6CEAM2Del6MNX9WonlV86HPbeEJL
+pZCexCajUQ4jriYwIGSxA1drZrFxDyFf1S0D1K0P
+Yc0mfrkGDw8gaaGKTrzwC3QUZDajv6k73DA99vWN
+ySzSEbVMAb5S1oSCQfbVG4mbh9Cb8wlF7BCvKI0L
+g2DA3EKWvx8uxVYcNFrmT5nJpon1Vi9V4XcOibJD
+CCNIlI0Vz41J66oFwsHUXaZa6NYFIY6z7aDF62Bc
+

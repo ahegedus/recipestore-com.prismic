@@ -27,6 +27,14 @@
 						"value": []
 					}
 				]
+			},
+			"category_filter": {
+				"key": "0c188b16-5488-44a5-ac9a-b219eb7ab85f",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
 			}
 		},
 		"items": []

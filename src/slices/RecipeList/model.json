@@ -12,6 +12,17 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "category_filter": {
+          "type": "Link",
+          "config": {
+            "label": "Category Filter",
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              "category"
+            ]
+          }
+        },
         "recipes": {
           "type": "Group",
           "config": {

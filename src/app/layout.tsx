@@ -20,7 +20,7 @@ export default function RootLayout({
                 <section>
                   <h2 className="text-xl font-semibold text-gray-500">Categories</h2>
                   <ul className="flex space-x-4">
-                    <li><Link href="/recipes/main-courses" className="text-blue-500 hover:underline">Main Courses</Link></li>
+                    <li><Link href="/category/main-course" className="text-blue-500 hover:underline">Main Courses</Link></li>
                   </ul>
                 </section>
                 <section>

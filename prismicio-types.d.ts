@@ -54,6 +54,71 @@ interface AuthorDocumentData {
 export type AuthorDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<AuthorDocumentData>, "author", Lang>;
 
+type CatalogDocumentDataSlicesSlice = RecipeTileSlice;
+
+/**
+ * Content for Catalog documents
+ */
+interface CatalogDocumentData {
+  /**
+   * Slice Zone field in *Catalog*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalog.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<CatalogDocumentDataSlicesSlice> /**
+   * Meta Title field in *Catalog*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: catalog.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Catalog*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: catalog.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Catalog*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: catalog.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Catalog document from Prismic
+ *
+ * - **API ID**: `catalog`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CatalogDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<CatalogDocumentData>,
+    "catalog",
+    Lang
+  >;
+
 /**
  * Content for Category documents
  */
@@ -105,6 +170,82 @@ export type CategoryDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<
     Simplify<CategoryDocumentData>,
     "category",
+    Lang
+  >;
+
+type CategorypageDocumentDataSlicesSlice = RecipeTileSlice;
+
+/**
+ * Content for CategoryPage documents
+ */
+interface CategorypageDocumentData {
+  /**
+   * Category Filter field in *CategoryPage*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: categorypage.category_filter
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  category_filter: prismic.ContentRelationshipField<"category">;
+
+  /**
+   * Slice Zone field in *CategoryPage*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: categorypage.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<CategorypageDocumentDataSlicesSlice> /**
+   * Meta Title field in *CategoryPage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: categorypage.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *CategoryPage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: categorypage.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *CategoryPage*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: categorypage.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * CategoryPage document from Prismic
+ *
+ * - **API ID**: `categorypage`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CategorypageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<CategorypageDocumentData>,
+    "categorypage",
     Lang
   >;
 
@@ -352,6 +493,17 @@ type RecipesDocumentDataSlicesSlice = RecipeTileSlice;
  */
 interface RecipesDocumentData {
   /**
+   * Receipe Category Filter field in *Recipes*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: recipes.receipe_category_filter
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  receipe_category_filter: prismic.ContentRelationshipField<"category">;
+
+  /**
    * Slice Zone field in *Recipes*
    *
    * - **Field Type**: Slice Zone
@@ -412,7 +564,9 @@ export type RecipesDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | AuthorDocument
+  | CatalogDocument
   | CategoryDocument
+  | CategorypageDocument
   | PageDocument
   | RecipeDocument
   | RecipepageDocument
@@ -600,6 +754,16 @@ export interface RecipeTileSliceDefaultPrimaryRecipesItem {
  */
 export interface RecipeTileSliceDefaultPrimary {
   /**
+   * Category Filter field in *RecipeList → Default → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: recipe_tile.default.primary.category_filter
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  category_filter: prismic.ContentRelationshipField<"category">;
+
+  /**
    * Recipes field in *RecipeList → Default → Primary*
    *
    * - **Field Type**: Group
@@ -755,8 +919,14 @@ declare module "@prismicio/client" {
     export type {
       AuthorDocument,
       AuthorDocumentData,
+      CatalogDocument,
+      CatalogDocumentData,
+      CatalogDocumentDataSlicesSlice,
       CategoryDocument,
       CategoryDocumentData,
+      CategorypageDocument,
+      CategorypageDocumentData,
+      CategorypageDocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,

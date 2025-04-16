@@ -1,6 +1,6 @@
 # recipestore-com-prismic Integration
 
-Deployed URL: <https://recipestore-com-com.vercel.app>
+Deployed URL: <https://recipestore-com.vercel.app>
 
 &nbsp;
 

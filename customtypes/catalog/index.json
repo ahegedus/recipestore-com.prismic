@@ -1,26 +1,11 @@
 {
   "format": "page",
-  "id": "recipes",
-  "label": "Recipes",
-  "repeatable": true,
+  "id": "catalog",
+  "label": "Catalog",
+  "repeatable": false,
   "status": true,
   "json": {
     "Main": {
-      "uid": {
-        "type": "UID",
-        "config": {
-          "label": "recipes"
-        }
-      },
-      "receipe_category_filter": {
-        "type": "Link",
-        "config": {
-          "label": "Receipe Category Filter",
-          "select": "document",
-          "repeat": false,
-          "customtypes": ["category"]
-        }
-      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

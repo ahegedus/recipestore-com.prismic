@@ -1,7 +1,7 @@
 {
   "format": "page",
-  "id": "recipes",
-  "label": "Recipes",
+  "id": "categorypage",
+  "label": "CategoryPage",
   "repeatable": true,
   "status": true,
   "json": {
@@ -9,13 +9,13 @@
       "uid": {
         "type": "UID",
         "config": {
-          "label": "recipes"
+          "label": "UID"
         }
       },
-      "receipe_category_filter": {
+      "category_filter": {
         "type": "Link",
         "config": {
-          "label": "Receipe Category Filter",
+          "label": "Category Filter",
           "select": "document",
           "repeat": false,
           "customtypes": ["category"]

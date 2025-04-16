@@ -31,35 +31,21 @@ Key files to edit:
 - `prismicio.ts`: Configures `@prismicio/client` and API utilities.
 - `app/layout.tsx`: Global layout setup, including Prismic providers, basic navigation bar
 - `app/page.tsx`: The homepage component; fetches and renders the "home" document.
-- `app/[uid]/page.tsx`: Dynamically renders pages based on Prismic UID.
-- `slices/*/index.tsx`: Individual Slice components. Modify these to change Slice styling and structure.
-
-Files you should avoid editing unless necessary:
-
-- `app/api/exit-preview/route.ts`: Handles exiting preview mode.
-- `app/api/preview/route.ts`: Starts a preview session.
-- `app/slice-simulator/page.tsx`: Simulates Slice components in development.
-- `slices/`: Stores all Slice components managed by Slice Machine.
-
-See these guides for more info:
-
-- [Fetch Data in Next.js](https://prismic.io/docs/technologies/fetch-data-nextjs)
-- [Template Content in Next.js](https://prismic.io/docs/technologies/template-content-nextjs)
+- `app/catalog/page.tsx`: Static render for all Recipes
+- `app/recipe/[uid]/page.tsx`: Dynamically renders Recipe page based on Prismic UID.
+- `app/category/[uid]/page.tsx`: Dynamically renders all Recipes with a static prefilter for category based on Prismic UID.
+- `slices/*/index.tsx`: Individual Slice components.
+- `slices/*/index.tsx`: Individual Slice components.
+- `store/index.ts`: Prismic content stores to easy access and helpers.
 
 ### Deploy the Project
 
-To deploy **recipestore-com-prismic**, follow Prismic’s guide: [Deploy your Next.js App](https://prismic.io/docs/technologies/deploy-nextjs).  
-Production deployment is hosted at: [https://recipestore-com-com.vercel.app](https://recipestore-com-com.vercel.app)
+- Automatic CI/CD pipeline on Vercel.
+- Demo deployment is hosted at: [https://recipestore-com.vercel.app](https://recipestore-com-com.vercel.app)
 
-### Edit Content Models with Slice Machine
+## References
 
-This project uses **Slice Machine** for managing Custom Types and Slices. Slice Machine keeps models locally and syncs them with your Prismic repo.
-
-Learn more: [Model Content in Next.js](https://prismic.io/docs/technologies/model-content-nextjs)
-
-> If you update your Custom Types, be sure to adjust your route logic accordingly. See [Define Paths in Next.js](https://prismic.io/docs/technologies/define-paths-nextjs) for guidance.
-
-## Documentation
+GenAI prompts are store in `prompts` folder.
 
 For more details, refer to:
 

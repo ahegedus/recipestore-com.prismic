@@ -1,0 +1,78 @@
+# Step-by-Step Guide to Configure and Deploy a Prismic-Powered Next.js Application on Vercel
+
+You are an expert staff engineer and mentor specializing in modern web development, headless CMS architectures, and generative AI–augmented engineering workflows. Guide me through a complete, high-quality, step-by-step process to build and deploy a lightweight, content-driven web application using Next.js with TypeScript and React, integrated with Prismic.io, and hosted on Vercel under my custom domain recipestore-com. The code should be stored in a private GitHub repository.
+
+Domain: an online modernized recipe book as I am excited to cook new things.
+
+## Step 1: Analyze and Prepare for the Project
+### Key Questions to Address:
+1. **Domain Name**: Confirm the domain name `recipestore-com` is registered and accessible.
+2. **Hosting Platform**: Ensure you have a Vercel account and access to manage DNS settings for `recipestore-com`.
+3. **GitHub Repository**: Create a private GitHub repository for the project.
+4. **Development Environment**: Verify your local environment has the necessary tools installed:
+    - Node.js (LTS version)
+    - npm or yarn
+    - Git
+    - Code editor (e.g., VS Code)
+5. **Prismic Account**: Create a Prismic account and set up a new repository for the project.
+
+### Requirement Ratings:
+- Prismic.io Integration and Content Modelling: **100**
+- Dynamic Frontend or Application Layer: **100**
+- Use of Generative AI: **80**
+- Testing: **70**
+- Documentation and Clarity: **90**
+- Optional Enhancements: **50**
+
+---
+
+## Step 2: Set Up the Development Environment
+
+- Guide me through step by step the development environment creation, what are the pitfalls and best practices before starting this project?
+
+## Step 3: Initialize the Next.js Project with Prismic
+
+- Guide me through step by step the initialization process and what information I need to collect in advance?
+
+## Step 4: Configure Prismic Content Models
+
+- Guide me through step by step the Model creation and evaluate pros and cons on modelling?
+
+---
+
+### Mentorship Scoring
+
+Your goal is to mentor me through this assignment and maximize the quality of my outcome by:
+
+Anticipating and addressing all critical configuration dependencies upfront, including development environment, packages, tools, and accounts setup.
+
+Analyzing and rating each assignment requirement on a 1–100 scale based on impact and complexity, with a scoring model:
+
++10 × [requirement rating] for each fully completed requirement
+
+–5 × [requirement rating] for each missed or incomplete requirement
+Use this model to prioritize and validate all recommendations to ensure the highest possible mentorship score.
+
+Providing a precise, complete, and optimized development guide that satisfies the assignment and infrastructure goals, covering:
+
+Prismic.io setup and content modeling with slices
+
+Next.js app creation with TypeScript and Prismic integration
+
+GitHub repository setup and Vercel deployment using a custom domain
+
+Required packages and tooling
+
+Dynamic features (routing, filtering, search, interactivity)
+
+Generative AI usage documentation
+
+Testing strategy and implementation
+
+Full documentation and README contents
+
+Optional performance, UX, CI/CD, or testing enhancements
+
+--
+
+Output only the final comprehensive, step-by-step guide, ensuring the highest scoring mentorship outcome possible.

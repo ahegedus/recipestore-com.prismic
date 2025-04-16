@@ -68,7 +68,7 @@ const RecipeGrid: FC<RecipeGridProps> = ({ recipes, store }) => {
         <>
             <section className="mb-4 flex gap-4">
                 <div style={{ display: 'flex', gap: '1rem', padding: '1rem', borderBottom: '1px solid #ccc' }}>
-                    <select onChange={(e) => onAuthorChange(e.target.value)} defaultValue="">
+                    <select data-testid="author-selector" onChange={(e) => onAuthorChange(e.target.value)} defaultValue="">
                         <option value="">
                             Select Author
                         </option>
@@ -78,16 +78,17 @@ const RecipeGrid: FC<RecipeGridProps> = ({ recipes, store }) => {
                             </option>
                         ))}
                     </select>
-                    {categoryFilters.length > 2 && (<select onChange={(e) => onCategoryChange(e.target.value)} defaultValue={""}>
-                        <option value="">
-                            Select Category
-                        </option>
-                        {categoryFilters.map((category) => (
-                            <option key={category.id} value={category.id}>
-                                {category.name}
+                    {categoryFilters.length > 2 && (
+                        <select data-testid="category-selector" onChange={(e) => onCategoryChange(e.target.value)} defaultValue={""}>
+                            <option value="">
+                                Select Category
                             </option>
-                        ))}
-                    </select>)}
+                            {categoryFilters.map((category) => (
+                                <option key={category.id} value={category.id}>
+                                    {category.name}
+                                </option>
+                            ))}
+                        </select>)}
                 </div>
             </section>
             <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

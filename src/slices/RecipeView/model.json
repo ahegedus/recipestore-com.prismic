@@ -1,0 +1,30 @@
+{
+  "id": "recipe_view",
+  "type": "SharedSlice",
+  "name": "RecipeView",
+  "description": "RecipeView",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "recipe": {
+          "type": "Link",
+          "config": {
+            "label": "Recipe",
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              "recipe"
+            ]
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

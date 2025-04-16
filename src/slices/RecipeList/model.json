@@ -1,0 +1,39 @@
+{
+  "id": "recipe_tile",
+  "type": "SharedSlice",
+  "name": "RecipeList",
+  "description": "RecipeTile",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "recipes": {
+          "type": "Group",
+          "config": {
+            "label": "Recipes",
+            "repeat": true,
+            "fields": {
+              "recipe": {
+                "type": "Link",
+                "config": {
+                  "label": "Recipe",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "recipe"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

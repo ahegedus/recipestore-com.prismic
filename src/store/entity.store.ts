@@ -23,8 +23,6 @@ const getEntityMap = async (entity: "category" | "author" | "recipe", categoryFi
     return acc;
   }, map);
 
-  console.log(`Fetched ${response.length} ${entity}(s)`, categoryFilterUid);
-
   return map;
 };
 

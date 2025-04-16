@@ -35,9 +35,6 @@ const RecipeGrid: FC<RecipeGridProps> = ({ recipes, store }) => {
 
             const matchesAuthor = selectedAuthor ? authorId === selectedAuthor : true;
             const matchesCategory = selectedCategory ? categoryId === selectedCategory : true;
-            console.log("Matches author:", matchesAuthor, "Matches category:", matchesCategory);
-            console.log("Selected author:", selectedAuthor, "Selected category:", selectedCategory);
-            console.log("Recipe author ID:", authorId, "Recipe category ID:", categoryId);
             return matchesAuthor && matchesCategory;
         });
     }, [recipes, selectedAuthor, selectedCategory, store.recipes]);
@@ -60,12 +57,10 @@ const RecipeGrid: FC<RecipeGridProps> = ({ recipes, store }) => {
     }, [store.authors, store.categories]);
 
     const onAuthorChange = useCallback((value: string): void => {
-        console.log("Selected author:", value);
         setSelectedAuthor(value);
     }, []);
 
     const onCategoryChange = useCallback((value: string): void => {
-        console.log("Selected category:", value);
         setSelectedCategory(value);
     }, []);
 

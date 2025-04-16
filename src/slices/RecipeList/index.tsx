@@ -18,7 +18,6 @@ const RecipeTile: FC<RecipeTileProps> = async ({ slice }) => {
   const categoryFilterUid = slice.primary.category_filter ? (slice.primary.category_filter as FilledContentRelationshipField<"category">).id : undefined;
   const store = await entities.getStore(categoryFilterUid);
   const recipes = slice.primary.recipes as RecipeTileSliceDefaultPrimaryRecipesItem[];
-  console.log("Store:", store, "Recipes:", recipes, "Category Filter:", categoryFilterUid);
   return (
     <section
       data-slice-type={slice.slice_type}
